@@ -1,0 +1,9 @@
+<h2>Vendehumos</h2>
+
+<div *ngFor="let vendehumo of vendehumos">
+  <h3>{{vendehumo.nombre}}</h3>
+  <p>{{vendehumo.descripcion}}</p>
+  <p>{{vendehumo.labels.join(', ')}}</p>
+  <button (click)="votar(vendehumo)"> -> {{vendehumo.numVotos}}</button>
+
+</div>
