@@ -1,1 +1,26 @@
-<p>nuevo-vendehumos works!</p>
+<h2>Añade un nuevo vendehumo favorito</h2>
+
+<form (ngSubmit)="guardar()" [formGroup]="formVendehumo">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+  </div>
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" formControlName="descripcion">
+  </div>
+  <div>
+    <label for="nuevo-label">Añade una etiqueta: </label>
+    <input type="text" id="nuevo-label">
+  </div>
+  <div formArrayName="labels">
+   <!--
+     <ng-container *ngFor="let label of formVendehumo.get('labels')?.controls; let pos = index">
+      <button [formControlName]="pos">{{label}}</button>
+    </ng-container>
+    -->
+  </div>
+
+  <button type="submit">Guardar</button>
+</form>
+

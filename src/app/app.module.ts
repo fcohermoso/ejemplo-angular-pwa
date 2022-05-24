@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { ListaVendehumosComponent } from './lista-vendehumos/lista-vendehumos.component';
 import { NuevoVendehumosComponent } from './nuevo-vendehumos/nuevo-vendehumos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable

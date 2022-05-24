@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "server:pwa": "ng build && npx http-server dist/ejemplo-angular-pwa",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
