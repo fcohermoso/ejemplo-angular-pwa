@@ -18,7 +18,7 @@ export class VendehumosService {
   }
 
   createVendehumos(vendehumos: any): Observable<any> {
-    return this.http.post(this.URL, vendehumos);
+    return this.http.post('http://localhost:3001/vendehumos', vendehumos);
   }
 
   updateVotosVendehumos(vendehumosId: number, numVotos: number): Observable<any> {
