@@ -11,16 +11,14 @@
   </div>
   <div>
     <label for="nuevo-label">Añade una etiqueta: </label>
-    <input type="text" id="nuevo-label">
+    <input type="text" id="nuevo-label" (change)="addLabel($event)">
   </div>
   <div formArrayName="labels">
-   <!--
-     <ng-container *ngFor="let label of formVendehumo.get('labels')?.controls; let pos = index">
-      <button [formControlName]="pos">{{label}}</button>
+     <ng-container *ngFor="let label of labelsControls; let pos = index">
+      <span>- {{label.value}} -</span>
     </ng-container>
-    -->
   </div>
 
-  <button type="submit">Guardar</button>
+  <button type="button" (click)="guardar()" [disabled]="formVendehumo.invalid">Guardar</button>
 </form>
 

@@ -20,15 +20,27 @@ export class NuevoVendehumosComponent implements OnInit {
       nombre: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
       numVotos: new FormControl(0, Validators.required),
-      labels: new FormArray([
-        new FormControl('cripto'),
-        new FormControl('trading'),
-        new FormControl('soccer'),
-      ], Validators.required),
+      labels: new FormArray([]),
     });
   }
 
   ngOnInit(): void {
+  }
+
+  get labelsControls() {
+    return (this.formVendehumo.get('labels') as FormArray).controls;
+  }
+
+  addLabel(event: any) {
+    if(event.target.value.trim()) {
+      const nuevoLabel = new FormControl(event.target.value.trim());
+
+      (this.formVendehumo.get('labels') as FormArray).push(nuevoLabel);
+
+      event.target.value = '';
+    }
+
+    return false;
   }
 
   guardar() {
